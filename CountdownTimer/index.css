@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.timer-display{
+    display: flex; 
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.time-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.colon {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.countdown__labels-time{
+    width: 70px;
+    height: 45px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+#start-btn{
+    background-color: #f39c12;
+}
+
+#reset-btn {
+    background-color: #e74c3c;
+}
+

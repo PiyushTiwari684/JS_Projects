@@ -1,0 +1,179 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #dddada;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container{
+    background-color: white;
+    width: 350px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+h3{
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin: 20px 0 10px;
+}
+
+#balance{
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.income-expense-container{
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+    padding: 20px;
+    margin: 20px 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.income-expense-container > div{
+    flex: 1;
+    text-align: center;
+}
+
+.income-expense-container > div:first-child{
+    border-right: 1px solid #bbb;
+}
+#inc-amt{
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    color: #2ecc71;
+}
+#exp-amt{
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    color: #c0392b;
+}
+
+#list{
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+
+}
+#list li{
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #333;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+    padding: 10px;
+    margin: 10px  0;
+}
+
+/* 12. Income (Plus) aur Expense (Minus) items ki Right-Side Border */
+#list li.plus {
+    /* Agar kamai hai (plus class), toh dabbe ke sirf right side mein ek 5px ki moti green line aayegi. */
+    border-right: 5px solid #2ecc71;
+}
+
+#list li.minus {
+    /* Agar kharcha hai (minus class), toh dabbe ke right side mein ek moti laal (red) line aayegi. */
+    border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    left: -30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#list li:hover .delete-btn {
+    /* Jab user kisi item (li) ke upar mouse le jaata hai, toh us item ke delete button ki opacity 1 ho jaati hai, yani wo dikhne lagta hai. */
+    opacity: 1;
+}
+
+/* 15. Form ke andar Label aur Inputs ke groups */
+.form-control {
+    margin: 10px 0;
+    /* Har label-input group ("Text" aur "Amount") ke upar aur niche ki jagah. */
+}
+
+/* 16. Labels (Jaise "Text" aur "Amount" likha hai) */
+.form-control label {
+    display: inline-block;
+    /* Label ko inline se inline-block banaya taaki ispar margin-top/bottom theek se kaam karein. */
+    margin: 10px 0;
+}
+
+/* 17. Input Boxes (Jisme user text ya number type karega) */
+input[type='text'],
+input[type='number'] {
+    border: 1px solid #dedede;
+    /* Input box ke charo taraf ek halki gray border. */
+    border-radius: 2px;
+    /* Box ke kinaro ko bahut thoda sa (2px) gol kiya hai. */
+    display: block;
+    /* Input box ko puri nayi line lene di, taaki wo label ke seedha niche aaye. */
+    font-size: 16px;
+    /* User jo type karega, us text ka size. */
+    padding: 10px;
+    /* Text input border se na chipke, isliye andar padding di. */
+    width: 100%;
+    /* Input box parent dabbe ki 100% poori chaurai (width) le lega. */
+}
+
+/* 18. Add Transaction Button (Submit Button) */
+.btn {
+    cursor: pointer;
+    background-color: #9c88ff;
+    /* Ek sundar sa modern purple color. */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    /* Button ka text "Add Transaction" white rahega. */
+    border: 0;
+    display: block;
+    font-size: 16px;
+    margin: 10px 0 30px;
+    /* Niche 30px ki jagah taaki app bottom se chipka hua na lage. */
+    padding: 10px;
+    width: 100%;
+    /* Button ko input boxes ki tarah poora chaura kar diya. */
+    transition: background-color 0.2s ease;
+    /* Hover par rang badalne ka ek smooth animation. */
+}
+
+/* 19. Submit Button Hover Effect */
+.btn:hover {
+    /* Mouse le jane par button ka color ek step aur dark (gehra) purple ho jayega, jo user ko clickable feel deta hai. */
+    background-color: #7b66ff;
+}
